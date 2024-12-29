@@ -77,7 +77,7 @@ from tensorflow.keras.layers import Input, SeparableConv2D, BatchNormalization, 
 from tensorflow.keras.models import Model
 import tensorflow as tf
 
-# Gradient Reversal Layer (GRL)
+# Gradient Reversal Mechanism (GRM)
 class GradientReversalLayer(tf.keras.layers.Layer):
     def __init__(self, lambda_=1.0):
         super(GradientReversalLayer, self).__init__()
@@ -240,7 +240,7 @@ datagen = ImageDataGenerator(
 )
 
 # Fit the model
-history = model.fit(train_dataset, epochs=100, validation_data=val_dataset, verbose=1)
+history = model.fit(train_dataset, epochs=50, validation_data=val_dataset, verbose=1)
 
 # Save weights
 model.save_weights('dual_path_unet_weights-brain.weights.h5') # Changed the filename to include '.weights.h5'
