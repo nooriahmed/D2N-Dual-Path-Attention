@@ -91,7 +91,7 @@ class GradientReversalLayer(tf.keras.layers.Layer):
             return x, grad
         return grad_reverse(inputs)
 
-# Cross-domain attention mechanism
+# Cross-domain attention module(CDAM)
 def cross_domain_attention(global_features, local_features):
     combined = Concatenate()([global_features, local_features])
     attention = Conv2D(1, (1, 1), activation='sigmoid')(combined)
